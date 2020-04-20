@@ -22,22 +22,22 @@ TEST(PracticeTest, is_simple_palindrome)
     ASSERT_TRUE(actual);
 
     //Basic False test
-    bool actual = obj.isPalindrome("test");
+    actual = obj.isPalindrome("test");
     ASSERT_FALSE(actual);
 
     //Insert Symbols
-    bool actual = obj.isPalindrome("-$$abBA$$-");
+    actual = obj.isPalindrome("-$$abBA$$-");
     ASSERT_TRUE(actual);
 
     //Insert Symbols -- False
-    bool actual = obj.isPalindrome("-%&$ ");
+    actual = obj.isPalindrome("-%&$ ");
     ASSERT_FALSE(actual);
 
     //Space strings
-    bool actual = obj.isPalindrome("          ");
+    actual = obj.isPalindrome("          ");
     ASSERT_TRUE(actual);
 
     //Empty string
-    bool actual = obj.isPalindrome("");
+    actual = obj.isPalindrome("");
     ASSERT_TRUE(actual);
 }
