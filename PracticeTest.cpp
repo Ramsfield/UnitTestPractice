@@ -14,6 +14,7 @@ class PracticeTest : public ::testing::Test
 		virtual void TearDown(){} //clean up after each test, (before destructor)
 };
 
+//PALINDROME TEST
 TEST(PracticeTest, is_simple_palindrome)
 {
     Practice obj;
@@ -60,4 +61,80 @@ TEST(PracticeTest, is_empty_palindrome)
     //Empty string
     bool actual = obj.isPalindrome("");
     ASSERT_TRUE(actual);
+}
+
+TEST(PracticeTest, is_numerical_palindrome)
+{
+    Practice obj;
+    //Empty string
+    bool actual = obj.isPalindrome("1122332211");
+    ASSERT_TRUE(actual);
+}
+
+//BEGIN SORTDESCENDING TESTS
+TEST(PracticeTest, simple_sorting_test)
+{
+  Practice obj;
+  int arr[3] = {3, 2, 1};
+  obj.sortDescending(arr[0], arr[1], arr[2]);
+  //Make sure they're in descending order
+  ASSERT_GE(arr[0], arr[1]);
+  ASSERT_GE(arr[1], arr[2]);
+  ASSERT_GE(arr[0], arr[2]);
+}
+
+TEST(PracticeTest, reverse_sorting_test)
+{
+  Practice obj;
+  int arr[3] = {1, 2, 3};
+  obj.sortDescending(arr[0], arr[1], arr[2]);
+  //Make sure they're in descending order
+  ASSERT_GE(arr[0], arr[1]);
+  ASSERT_GE(arr[1], arr[2]);
+  ASSERT_GE(arr[0], arr[2]);
+}
+
+TEST(PracticeTest, negative_sorting_test)
+{
+  Practice obj;
+  int arr[3] = {-1, -2, -3};
+  obj.sortDescending(arr[0], arr[1], arr[2]);
+  //Make sure they're in descending order
+  ASSERT_GE(arr[0], arr[1]);
+  ASSERT_GE(arr[1], arr[2]);
+  ASSERT_GE(arr[0], arr[2]);
+}
+
+
+TEST(PracticeTest, mixed_sorting_test)
+{
+  Practice obj;
+  int arr[3] = {-1000, 0, 53000};
+  obj.sortDescending(arr[0], arr[1], arr[2]);
+  //Make sure they're in descending order
+  ASSERT_GE(arr[0], arr[1]);
+  ASSERT_GE(arr[1], arr[2]);
+  ASSERT_GE(arr[0], arr[2]);
+}
+
+TEST(PracticeTest, zero_sorting_test)
+{
+  Practice obj;
+  int arr[3] = {0, 0, 0};
+  obj.sortDescending(arr[0], arr[1], arr[2]);
+  //Make sure they're in descending order
+  ASSERT_GE(arr[0], arr[1]);
+  ASSERT_GE(arr[1], arr[2]);
+  ASSERT_GE(arr[0], arr[2]);
+}
+
+TEST(PracticeTest, zero_negative_zero_sorting_test)
+{
+  Practice obj;
+  int arr[3] = {0, -0, 0};
+  obj.sortDescending(arr[0], arr[1], arr[2]);
+  //Make sure they're in descending order
+  ASSERT_GE(arr[0], arr[1]);
+  ASSERT_GE(arr[1], arr[2]);
+  ASSERT_GE(arr[0], arr[2]);
 }
