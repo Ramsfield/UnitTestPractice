@@ -20,24 +20,44 @@ TEST(PracticeTest, is_simple_palindrome)
     //Basic Test
     bool actual = obj.isPalindrome("aa");
     ASSERT_TRUE(actual);
+}
 
+TEST(PracticeTest, is_simple_false_palindrome)
+{
+    Practice obj;
     //Basic False test
-    actual = obj.isPalindrome("test");
+    bool actual = obj.isPalindrome("test");
     ASSERT_FALSE(actual);
+}
 
+TEST(PracticeTest, is_symbol_palindrome)
+{
+    Practice obj;
     //Insert Symbols
-    actual = obj.isPalindrome("-$$abBA$$-");
+    bool actual = obj.isPalindrome("-$$abBA$$-");
     ASSERT_TRUE(actual);
+}
 
+TEST(PracticeTest, is_symbol_false_palindrome)
+{
+    Practice obj;
     //Insert Symbols -- False
-    actual = obj.isPalindrome("-%&$ ");
+    bool actual = obj.isPalindrome("-%&$ ");
     ASSERT_FALSE(actual);
+}
 
+TEST(PracticeTest, is_space_palindrome)
+{
+    Practice obj;
     //Space strings
-    actual = obj.isPalindrome("          ");
+    bool actual = obj.isPalindrome("          ");
     ASSERT_TRUE(actual);
+}
 
+TEST(PracticeTest, is_empty_palindrome)
+{
+    Practice obj;
     //Empty string
-    actual = obj.isPalindrome("");
+    bool actual = obj.isPalindrome("");
     ASSERT_TRUE(actual);
 }
