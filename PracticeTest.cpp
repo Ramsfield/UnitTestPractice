@@ -79,6 +79,15 @@ TEST(PracticeTest, is_bad_chars)
   ASSERT_TRUE(actual);
 }
 
+TEST(PracticeTest, is_false_bad_chars)
+{
+  Practice obj;
+  //String with wrong chars
+  bool actual = obj.isPalindrome("\x01\x01a\x01b\x01a\x00\x00");
+  ASSERT_FALSE(actual);
+}
+
+
 //BEGIN SORTDESCENDING TESTS
 TEST(PracticeTest, simple_sorting_test)
 {
