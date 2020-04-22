@@ -95,6 +95,14 @@ TEST(PracticeTest, all_non_chars)
   ASSERT_FALSE(actual);
 }
 
+TEST(PracticeTest, string_with_null_char)
+{
+  Practice obj;
+  //String with wrong chars
+  bool actual = obj.isPalindrome("a\x00 this is not a correct string");
+  ASSERT_FALSE(actual);
+}
+
 //BEGIN SORTDESCENDING TESTS
 TEST(PracticeTest, simple_sorting_test)
 {
