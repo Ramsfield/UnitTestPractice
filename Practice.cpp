@@ -21,12 +21,32 @@ void Practice::sortDescending(int & first, int & second, int & third)
       second = third;
       third = temp;
     }
+    /*There will be one of four instances in which code will reach this block:
+     *
+     * 1. The first two if statements fail. So first > second and second > third.
+     *    By this definition, first > second > third, therefore first > third and this if statement would fail
+     *
+     * 2. The first fails and the second succeeds. So first > second and second < third. By this, second and third would be swapped,
+     *    therefore we'd be rechecking if( first < second) which we previously stated first > second. This statement would fail
+     *
+     * 3. The first succeeds and the second fails. So first < second and second > third. By this, first and second would swap and
+     *    we'd be rechecking if(second < third) which we previously stated second > third. This statement would fail
+     *
+     * 4. Both the first and second statements succeed. So first < second and second < third. so we swap first and second first, 
+     *    Then swap the second and third, effectively swapping first and third. So we will now be checking if(second < first) which 
+     *    because we stated first < second, this check fails.
+     *
+     * Therefore, this is unreachable code. If I thought it out better last time, I would have realized changing this to `first < second`
+     * would have fixed everything and done me well
+     */
+    /*
     if( first < third )
     {
       int temp = first;
       first = third;
       third = temp;
     }
+    */
   }
 }
 

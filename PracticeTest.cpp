@@ -146,3 +146,14 @@ TEST(PracticeTest, zero_negative_zero_sorting_test)
   ASSERT_GE(arr[1], arr[2]);
   ASSERT_GE(arr[0], arr[2]);
 }
+
+TEST(PracticeTest, zero_negative_zero_sorting_test)
+{
+  Practice obj;
+  int arr[3] = {2, 1, 3};
+  obj.sortDescending(arr[0], arr[1], arr[2]);
+  //Make sure they're in descending order
+  ASSERT_GE(arr[0], arr[1]);
+  ASSERT_GE(arr[1], arr[2]);
+  ASSERT_GE(arr[0], arr[2]);
+}
