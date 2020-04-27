@@ -79,22 +79,6 @@ TEST(PracticeTest, is_bad_chars)
   ASSERT_TRUE(actual);
 }
 
-TEST(PracticeTest, is_false_bad_chars)
-{
-  Practice obj;
-  //String with wrong chars
-  bool actual = obj.isPalindrome("\x01\x01a\x01b\x01a\x00\x00");
-  ASSERT_FALSE(actual);
-}
-
-TEST(PracticeTest, all_non_chars)
-{
-  Practice obj;
-  //String with wrong chars
-  bool actual = obj.isPalindrome("\x00\x01\x02\x03\x04\x05\x06");
-  ASSERT_FALSE(actual);
-}
-
 TEST(PracticeTest, string_with_null_char)
 {
   Practice obj;
